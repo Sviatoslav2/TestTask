@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Site</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+{% include 'cars/navbar.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col">
+            <table class="table">
+                <tr>
+                    <th><a href="http://127.0.0.1:8000/cars/id">id</a></th>
+                    <th><a href="http://127.0.0.1:8000/cars/brand">brand</a></th>
+                    <th><a href="http://127.0.0.1:8000/cars/model">model</a></th>
+                    <th><a href="http://127.0.0.1:8000/cars/category">category</a></th>
+                    <th><a href="http://127.0.0.1:8000/cars/price">price</a></th>
+                </tr>
+                {% for car in cars %}
+                <tr>
+                    <td>{{car.id}}</td>
+                    <td>{{ car.brand}}</td>
+                    <td>{{ car.model}}</td>
+                    <td>{{ car.category}}</td>
+                    <td>{{ car.price }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+</body>
+</html>
